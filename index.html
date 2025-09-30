@@ -54,7 +54,7 @@
     .card p { margin:0 0 12px; color:#4b5563; line-height:1.45; }
     .card small { display:block; color:#6b7280; margin-bottom:10px; }
 
-    /* Petition / Live Chat form layout */
+    /* Petition form layout */
     .form-wrap {
       max-width:720px; margin:0 auto; background:#fff; padding:22px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06);
     }
@@ -109,7 +109,6 @@
         <li><a href="#">Beranda</a></li>
         <li><a href="#monitor">Monitoring UU</a></li>
         <li><a href="#petisi">Petisi</a></li>
-        <li><a href="https://wa.me/6283861780938" target="_blank">Live Chat</a></li>
         <li><a href="#tentang">Tentang</a></li>
       </ul>
     </nav>
@@ -119,7 +118,6 @@
   <section class="hero">
     <h1>Dorong Legislasi Progresif Bersama Mahasiswa!</h1>
     <p>Platform digital untuk memantau, menganalisis, dan mengadvokasi kebijakan inklusif demi keadilan sosial.</p>
-    <a class="btn-primary" href="https://wa.me/6281234567890" target="_blank">Bergabung di Live Chat</a>
   </section>
 
   <!-- Pantau Perkembangan UU -->
@@ -191,9 +189,6 @@
   <button id="resetBtnDev">Reset Petisi (DEV)</button>
 
   <script>
-    /***********************
-     * Petition functionality
-     ***********************/
     const petitionForm = document.getElementById('petitionForm');
     const inputNama = document.getElementById('inputNama');
     const inputEmail = document.getElementById('inputEmail');
@@ -272,9 +267,7 @@
 
     renderPetitions();
 
-    /*******************************
-     * DEV secret code & reset logic
-     *******************************/
+    /* DEV secret code & reset logic */
     const devBadge = document.getElementById('devModeBadge');
     const resetBtnDev = document.getElementById('resetBtnDev');
     let secretCode = '';
