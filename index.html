@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SuaraProgresif</title>
+
+  <style>
+    body { font-family: Inter, Arial, sans-serif; margin:0; padding:0; background:#f1f3f5; }
+    a { text-decoration:none; color:inherit; }
+    header.topbar {
+      background:#c62828; color:#fff;
+      padding:14px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; z-index:40;
+    }
+    .brand { font-weight:800; font-size:20px; }
+    nav ul { list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center; }
+    nav li { font-weight:600; }
+    nav a { color:#fff; opacity:0.95; }
+    nav a:hover { text-decoration:underline; }
+
+    /* Hero */
+    .hero { background:#fce8e8; text-align:center; padding:64px 20px; }
+    .hero h1 { font-size:42px; margin:0 0 12px; font-weight:800; }
+    .hero p { max-width:800px; margin:0 auto; font-size:18px; color:#333; }
+
+    /* Section */
+    .container { max-width:1100px; margin:0 auto; padding:40px 20px; }
+    .section-title { text-align:center; font-size:30px; font-weight:800; margin-bottom:20px; }
+
+    /* Cards grid */
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.06); }
+    .card h3 { margin:0 0 8px; font-size:20px; }
+    .card p { margin:0; color:#555; line-height:1.45; }
+    .card small { display:block; color:#777; margin-bottom:10px; }
+
+    /* Form Petisi */
+    .form-wrap { max-width:720px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.06); }
+    label { display:block; margin-top:12px; font-weight:700; }
+    input, textarea { width:100%; margin-top:6px; padding:10px; border-radius:8px; border:1px solid #ccc; }
+    textarea { min-height:120px; resize:vertical; }
+    button { margin-top:16px; padding:10px 18px; border:none; border-radius:8px; background:#c62828; color:white; font-weight:700; cursor:pointer; }
+    button:hover { background:#a81f1f; }
+
+    /* Petisi list */
+    .petition-list { margin-top:24px; display:flex; flex-direction:column; gap:12px; }
+    .petition-item { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); }
+    .petition-item h4 { margin:0 0 6px; }
+    .meta { color:#666; font-size:13px; margin-bottom:6px; }
+
+    footer { background:#c62828; color:white; text-align:center; padding:20px; margin-top:40px; }
+
+    /* Dev Mode */
+    #devModeBadge {
+      display:none; position:fixed; bottom:16px; right:16px;
+      background:#111; color:#fff; padding:8px 12px; border-radius:10px; font-weight:700;
+    }
+    #resetBtnDev {
+      display:none; position:fixed; bottom:16px; right:120px;
+      background:#dc2626; color:white; padding:10px 14px; border:none; border-radius:10px; cursor:pointer;
+    }
+
+    @media(max-width:900px){
+      .cards{grid-template-columns:1fr;}
+      .hero h1{font-size:28px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="brand">SuaraProgresif</div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#monitor">Monitoring UU</a></li>
+        <li><a href="#petisi">Petisi</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Dorong Legislasi Progresif Bersama Mahasiswa!</h1>
+    <p>Platform digital untuk memantau, menganalisis, dan mengadvokasi kebijakan inklusif demi keadilan sosial.</p>
+  </section>
+
+  <!-- Monitoring UU -->
+  <section class="container" id="monitor">
+    <div class="section-title">Pantau Perkembangan UU</div>
+    <div class="cards">
+      <article class="card">
+        <h3>RUU Perampasan Aset</h3>
+        <small>Status: Dalam Pembahasan DPR · Diusulkan sejak 2018</small>
+        <p>Tujuan: Untuk memberantas tindak pidana korupsi dengan memberikan mekanisme perampasan aset milik pelaku yang diduga melakukan tindak pidana.</p>
+        <a href="dokumen/1RUUPA.pdf" target="_blank"><button>Lihat PDF</button></a>
+      </article>
+
+      <article class="card">
+        <h3>RUU Perubahan atas UU No. 8 Tahun 1999 tentang Perlindungan Konsumen</h3>
+        <small>Status:  Dalam tahap pembahasan di Komisi VI DPR RI · Diusulkan sejak 2020</small>
+        <p>Tujuan : Memperkuat perlindungan konsumen di era digital, termasuk transaksi e-commerce, layanan lintas batas, dan risiko keamanan data, yang belum diakomodasi optimal oleh UU asli sejak 1999.</p>
+        <a href="dokumen/2RUU" target="_blank"><button>Lihat PDF</button></a>
+      </article>
+
+      <article class="card">
+        <h3>RUU tentang Energi Baru Terbarukan</h3>
+        <small>Status: Dalam tahap pembahasan tingkat I di Komisi VII DPR RI · Diusulkan sejak 2021</small>
+        <p>Tujuan : Meningkatkan porsi EBT dalam bauran energi nasional, dengan target realistis 25-30% pada 2030 melalui penguatan regulasi, insentif fiskal (pembebasan PPN untuk teknologi EBT, subsidi tarif listrik hijau), dan skema pendanaan hijau seperti green bonds yang dikelola BUMN energi. Ini juga mencakup pengembangan PLTS atap, PLTA mikro, dan hidrogen hijau.</p>
+        <a href="dokumen/RUU.pdf" target="_blank"><button>Lihat PDF</button></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Petisi -->
+  <section class="container" id="petisi">
+    <div class="section-title">Buat dan Dukung Petisi</div>
+    <div class="form-wrap">
+      <form id="petitionForm">
+        <label>Nama</label>
+        <input type="text" id="nama" required>
+        <label>Email</label>
+        <input type="email" id="email" required>
+        <label>Judul Petisi</label>
+        <input type="text" id="judul" required>
+        <label>Isi Petisi</label>
+        <textarea id="isi" required></textarea>
+        <button type="submit">Kirim Petisi</button>
+      </form>
+      <div class="petition-list" id="petitionList"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="tentang">
+    © 2025 Suara Progresif · Dibuat oleh Mahasiswa untuk Legislasi Progresif
+  </footer>
+
+  <!-- Dev mode -->
+  <div id="devModeBadge">🔧 DEV MODE</div>
+  <button id="resetBtnDev">Reset Petisi (DEV)</button>
+
+  <!-- Firebase SDK -->
+  <!-- Firebase v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <script>
+    // 🔥 Ganti dengan config dari Firebase Console
+    const firebaseConfig = {
+  apiKey: "AIzaSyDR4cUjlMYHfLRmrRdkRb7KduFMHU23jKg",
+  authDomain: "suara-progrerif.firebaseapp.com",
+  projectId: "suara-progrerif",
+  storageBucket: "suara-progrerif.appspot.com",
+  messagingSenderId: "1018964671763",
+  appId: "1:1018964671763:web:08303865d52ab87c4b6ee6",
+};
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const form = document.getElementById("petitionForm");
+    const list = document.getElementById("petitionList");
+
+    // Submit petisi ke Firestore
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const judul = document.getElementById("judul").value.trim();
+      const isi = document.getElementById("isi").value.trim();
+
+      if (!nama || !email || !judul || !isi) {
+        alert("Isi semua kolom terlebih dahulu!");
+        return;
+      }
+
+      await db.collection("petisi").add({ nama, email, judul, isi, ts:new Date() });
+      form.reset();
+    });
+
+    // Ambil data realtime
+    function renderPetisi() {
+    db.collection("petisi").orderBy("ts","desc").onSnapshot(snapshot=>{
+      list.innerHTML="";
+      if(snapshot.empty){
+        list.innerHTML="<i style='color:#666;'>Belum ada petisi.</i>";
+        return;
+      }
+      snapshot.forEach(doc=>{
+        const p=doc.data();
+        const div=document.createElement("div");
+        div.className="petition-item";
+        div.innerHTML=`
+          <h4>${p.judul}</h4>
+          <div class="meta">Oleh: ${p.nama} · ${p.email} · ${p.ts.toDate().toLocaleString("id-ID")}</div>
+          <p>${p.isi}</p>
+        `;
+        list.appendChild(div);
+      });
+    });
+  }
+  renderPetisi();
+
+    // Dev mode reset (ketik "resetpetisi")
+    const devBadge=document.getElementById("devModeBadge");
+    const resetBtn=document.getElementById("resetBtnDev");
+    let code="";
+    document.addEventListener("keydown",(e)=>{
+      if(e.key.length!==1)return;
+      code+=e.key.toLowerCase();
+      if(code.length>11) code=code.slice(-11);
+      if(code==="resetpetisi"){
+        devBadge.style.display="block";
+        resetBtn.style.display="block";
+        alert("🔑 Mode Dev Aktif");
+        code="";
+      }
+    });
+    resetBtn.addEventListener("click",async()=>{
+      if(!confirm("Yakin reset semua petisi?"))return;
+      const snap=await db.collection("petisi").get();
+      const batch=db.batch();
+      snap.forEach(doc=>batch.delete(doc.ref));
+      await batch.commit();
+      alert("Semua petisi dihapus.");
+    });
+  </script>
+</body>
+</html>
